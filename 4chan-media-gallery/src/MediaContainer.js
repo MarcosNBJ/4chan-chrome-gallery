@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+const media = require('4chan-get-media');
 
 function MediaContainer({thread_url}) {
+
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        async function fetchData() {
+          const result = await media.get_thread_media(thread_url);
+          setPosts(result);
+        }
+        fetchData();
+      }, [thread_url]);
+
+    console.log(posts)
+
     return (
         <div>
-            <video width="400" controls>
-                {console.log(thread_url)}
-                <source src="https://i.4cdn.org/gif/1609597984859.webm" type="video/webm"/>
-            </video>
+        {posts.map((post) => (
+          <p>{post.thumbnail}</p>
+        ))}
         </div>
     )
 }
