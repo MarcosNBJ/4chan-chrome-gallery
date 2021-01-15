@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-const media = require('4chan-get-media');  
 const axios = require('axios');
 const cheerio = require('cheerio');
 
