@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": ".",
+  "proxy": "https://boards.4channel.org",
   "dependencies": {
     "4chan-get-media": "^1.1.0",
     "@testing-library/jest-dom": "^5.11.4",
