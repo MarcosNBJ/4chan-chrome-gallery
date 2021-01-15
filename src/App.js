@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
 
-        <MediaContainer thread_url="http://boards.4channel.org/w/thread/2188911"/>
+        <MediaContainer thread_url="https://boards.4channel.org/w/thread/2188911"/>
     </div>
   );
 }
