@@ -6,8 +6,11 @@ function App() {
   return (
     <div className="App">
 
-        <MediaContainer thread_url="boards.4chan.org/gif/thread/18813030"/>
+        <MediaContainer thread_url="boards.4channel.org/w/thread/2168538"/>
+        <meta name="referrer" content="no-referrer"/>
+
     </div>
+    
   );
 }
 
