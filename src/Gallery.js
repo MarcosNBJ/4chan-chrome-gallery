@@ -9,6 +9,7 @@ function Gallery({thread_url}) {
 
     const [posts, setPosts] = useState([]);
     const [mediaUrl, setMediaUrl] = useState("");
+    const [loadingImage, setLoadingImage] = useState(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -19,7 +20,8 @@ function Gallery({thread_url}) {
       }, [thread_url]);
 
       const viewMedia = (index) => {
-        console.log("adasdad"); 
+        console.log("adasdad");
+        setLoadingImage(true) 
         setMediaUrl(index);
       };
 
@@ -27,7 +29,9 @@ function Gallery({thread_url}) {
       <div className="container">
         {mediaUrl !== "" && 
           <div>
-            <img className="mediaContainer" src={posts[mediaUrl].url} alt="" srcset=""/>
+            <img className={`mediaContainer ${loadingImage && "fade"}`} src={posts[mediaUrl].url} alt=""  
+              onLoad={() => setLoadingImage(false)}
+            />
             <div className="row">
             <ScrollContainer className="row__posters">
                 {posts.map((post, index) => (
