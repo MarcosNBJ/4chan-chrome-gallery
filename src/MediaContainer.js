@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import ScrollContainer from "react-indiana-drag-scroll";
+import "./MediaContainer.css";
 
-function MediaContainer({url}) {
+function MediaContainer({posts}) {
+
 
     return (
-        <div>
-            <img className="mediaContainer" src={url} alt=""/>
-        </div>
+      <div className="row">
+            <ScrollContainer className="row__posters">
+                {posts.map((post, index) => (
+                        <img className="row__poster" src={post.thumbnail} alt=""
+                        onClick={() =>
+                        viewMedia(index)
+                        }
+                        />
+                ))}
+            </ScrollContainer>
+     </div>
     )
 }
 

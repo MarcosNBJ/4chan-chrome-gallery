@@ -24,7 +24,7 @@ function Gallery({thread_url}) {
 
     return (
       <div className="container">
-        {mediaUrl !== "" && <MediaContainer  url={posts[mediaUrl].url}/>}
+        {mediaUrl !== "" && <MediaContainer  posts={posts}/>}
         {mediaUrl === "" && posts.map((post, index) => (
         <div className="responsive">
           <div className="gallery">
