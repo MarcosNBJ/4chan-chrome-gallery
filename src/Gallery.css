@@ -2,7 +2,12 @@ body{
     background-color: #151316;
 }
 
-
+.mediaContainer{
+    max-width: 80%;
+    display: block;
+    max-height: auto;
+    margin: auto;
+}
 div.gallery  .card{
     width: 180px; 
     height: 150px; 
