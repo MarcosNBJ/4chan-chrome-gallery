@@ -1,51 +1,59 @@
-body{
+body {
     background-color: #151316;
 }
 
-.mediaContainer{
-    padding: 10px;
-    max-width: 80%;
-    display: block;
+.mediaContainer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    max-height: 100%;
+    max-width: 100%;
     margin: auto;
+
 }
-div.gallery  .card{
-    width: 180px; 
-    height: 150px; 
+
+div.gallery .card {
+    width: 180px;
+    height: 150px;
     object-fit: cover;
-    object-position: 20% 10%; 
-    }
-.container{
-margin: auto;
-width: 90%;
+    object-position: 20% 10%;
 }
+
+.container {
+    margin: auto;
+    width: 90%;
+}
+
 .responsive {
-float: left;
-margin-left: 10px;
-margin-top: 15px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 15px;
 
 }
 
 @media only screen and (max-width: 700px) {
-.responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-}
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
 }
 
 @media only screen and (max-width: 500px) {
-.responsive {
-    width: 100%;
-}
+    .responsive {
+        width: 100%;
+    }
 }
 
 .clearfix:after {
-content: "";
-display: table;
-clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .fade {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 1s, opacity 1s linear;
-  }
+}

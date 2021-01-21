@@ -6,9 +6,10 @@ function App() {
   const [url, setUrl] = useState('');
 
   useEffect(() => {
-    chrome.runtime.sendMessage("Ready", function(response) {
-      setUrl(response.url);
-    });
+    setUrl("boards.4chan.org/gif/thread/18856978");
+    // chrome.runtime.sendMessage("Ready", function(response) {
+    //   setUrl(response.url);
+    // });
   }, []);
 
   return (

@@ -5,69 +5,70 @@ import "./MediaContainer.css";
 
 const media = require('4chan-get-media');
 
-function Gallery({thread_url}) {
+function Gallery({ thread_url }) {
 
-    const [posts, setPosts] = useState([]);
-    const [mediaUrl, setMediaUrl] = useState("");
-    const [loadingImage, setLoadingImage] = useState(false);
-    const [isVideo, setIsVideo] = useState(false);
+  const [posts, setPosts] = useState([]);
+  const [mediaUrl, setMediaUrl] = useState("");
+  const [loadingImage, setLoadingImage] = useState(false);
+  const [isVideo, setIsVideo] = useState(false);
 
-    useEffect(() => {
-        async function fetchData() {
-          const result = await media.get_thread_media(thread_url);
-          setPosts(result);
-        }
-        fetchData();
-      }, [thread_url]);
+  useEffect(() => {
+    async function fetchData() {
+      const result = await media.get_thread_media(thread_url);
+      setPosts(result);
+    }
+    fetchData();
+  }, [thread_url]);
 
-      const viewMedia = (index) => {
-        const fextension = posts[index].url.split(".").pop()
-        setIsVideo(fextension === "webm")
-        setLoadingImage(true) 
-        setMediaUrl(index);
-      };
+  const viewMedia = (index) => {
+    const fextension = posts[index].url.split(".").pop()
+    setIsVideo(fextension === "webm")
+    setLoadingImage(true)
+    setMediaUrl(index);
+  };
 
-    return (
-      <div className="container">
-        {mediaUrl !== "" && 
+  return (
+    <div className="container">
+      {mediaUrl !== "" &&
+        <div>
           <div>
 
-            { isVideo ?
-            <video  key={posts[mediaUrl].url} controls>
-              <source src={posts[mediaUrl].url} type="video/webm"/>
-            </video> :
-              <img className={`mediaContainer ${loadingImage && "fade"}`} src={posts[mediaUrl].url} alt=""  
+            {isVideo ?
+              <video className='mediaContainer' key={posts[mediaUrl].url} controls>
+                <source src={posts[mediaUrl].url} type="video/webm" />
+              </video> :
+              <img className={`mediaContainer ${loadingImage && "fade"}`} src={posts[mediaUrl].url} alt=""
                 onLoad={() => setLoadingImage(false)}
               />
             }
-
-            <div className="row">
-            <ScrollContainer className="row__posters">
-                {posts.map((post, index) => (
-                        <img className="row__poster" src={post.thumbnail} alt=""
-                        onClick={() =>
-                        viewMedia(index)
-                        }
-                        />
-                ))}
-            </ScrollContainer>
-            </div>
           </div>
-        }
-        {mediaUrl === "" && posts.map((post, index) => (
+          <div className="row">
+            <ScrollContainer className="row__posters">
+              {posts.map((post, index) => (
+                <img className="row__poster" src={post.thumbnail} alt=""
+                  onClick={() =>
+                    viewMedia(index)
+                  }
+                />
+              ))}
+            </ScrollContainer>
+          </div>
+        </div>
+      }
+      {mediaUrl === "" && posts.map((post, index) => (
         <div className="responsive">
           <div className="gallery">
             <img className="card" src={post.thumbnail} alt=""
-             onClick={() =>
-              viewMedia(index)
-            }
+              onClick={() =>
+                viewMedia(index)
+              }
             />
           </div>
         </div>
-        ))}
-        <div className="clearfix"></div>
-     </div>
-    )
+      ))}
+      <div className="clearfix"></div>
+    </div>
+  )
 }
 
 export default Gallery
