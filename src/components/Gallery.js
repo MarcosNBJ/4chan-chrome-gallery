@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./Gallery.css";
-import "./MediaContainer.css";
+import "../styles/Gallery.css";
+import "../styles/MediaContainer.css";
 import GridGallery from './GridGallery'; 
 import MediaPage from './MediaPage'; 
 

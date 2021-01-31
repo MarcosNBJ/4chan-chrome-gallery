@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import './App.css';
-import Gallery from './Gallery'; 
+import './styles/App.css';
+import Gallery from './components/Gallery'; 
 
 function App() {
   const [url, setUrl] = useState('');
