@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Gallery.css";
 import ScrollContainer from "react-indiana-drag-scroll";
 import "./MediaContainer.css";
+import GridGallery from './GridGallery'; 
 
 const media = require('4chan-get-media');
 
@@ -55,18 +56,9 @@ function Gallery({ thread_url }) {
           </div>
         </div>
       }
-      {mediaUrl === "" && posts.map((post, index) => (
-        <div className="responsive">
-          <div className="gallery">
-            <img className="card" src={post.thumbnail} alt=""
-              onClick={() =>
-                viewMedia(index)
-              }
-            />
-          </div>
-        </div>
-      ))}
-      <div className="clearfix"></div>
+      {mediaUrl === "" && 
+        <GridGallery clickFunction={viewMedia} mediaList={posts} />
+      }
     </div>
   )
 }
