@@ -1,6 +1,3 @@
-body {
-    background-color: #151316;
-}
 
 .mediaContainer {
     position: absolute;
@@ -8,10 +5,21 @@ body {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    max-height: 100%;
+    max-height: 80%;
     max-width: 100%;
     margin: auto;
 
+}
+
+.media{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    max-height: 90%;
+    max-width: 100%;
+    margin: auto;
 }
 
 div.gallery .card {

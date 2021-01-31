@@ -31,13 +31,13 @@ function Gallery({ thread_url }) {
     <div className="container">
       {mediaUrl !== "" &&
         <div>
-          <div>
+          <div className='mediaContainer'>
 
             {isVideo ?
-              <video className='mediaContainer' key={posts[mediaUrl].url} controls>
+              <video className='media' key={posts[mediaUrl].url} controls>
                 <source src={posts[mediaUrl].url} type="video/webm" />
               </video> :
-              <img className={`mediaContainer ${loadingImage && "fade"}`} src={posts[mediaUrl].url} alt=""
+              <img className={`media ${loadingImage && "fade"}`} src={posts[mediaUrl].url} alt=""
                 onLoad={() => setLoadingImage(false)}
               />
             }
