@@ -14,17 +14,15 @@ function MediaPage({isVideo, mediaList, setLoadingImage, viewMedia, loadingImage
               />
             }
           </div>
-          <div className="row">
-            <ScrollContainer className="row__posters">
+            <ScrollContainer className="thumbnails_row">
               {mediaList.map((media, index) => (
-                <img className="row__poster" src={media.thumbnail} alt=""
+                <img className="thumbnail" src={media.thumbnail} alt=""
                   onClick={() =>
                     viewMedia(index)
                   }
                 />
               ))}
             </ScrollContainer>
-          </div>
         </div>
     )
 }
