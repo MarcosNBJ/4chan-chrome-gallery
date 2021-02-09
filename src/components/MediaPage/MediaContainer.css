@@ -1,4 +1,4 @@
-.thumbnails_row {
+/* .thumbnails_row {
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -6,20 +6,20 @@
   bottom: 0;
   left: 0;
   margin: 10px;
-}
+} */
 
-.thumbnails_row::-webkit-scrollbar {
+/* .thumbnails_row::-webkit-scrollbar {
   display: none;
-}
+} */
 
-.thumbnail {
+/* .thumbnail {
   object-fit: contain;
   width: 100%;
   max-height: 100px;
   padding: 10px;
   transition: transform 450ms;
-}
+} 
 
-.thumbnail:hover {
+ .thumbnail:hover {
   transform: scale(1.08);
-}
+} */

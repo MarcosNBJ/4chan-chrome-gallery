@@ -1,11 +1,11 @@
 import React from 'react'
-import ScrollContainer from "react-indiana-drag-scroll";
 import "./MediaContainer.css";
+import { MediaContainer, ScrollThumbails, Thumbnail } from './style';
 
 function MediaPage({isVideo, mediaList, setLoadingImage, viewMedia, loadingImage, mediaUrl}) {
     return (
         <div>
-          <div className='mediaContainer'>
+          <MediaContainer>
             {isVideo ?
               <video className='media' key={mediaList[mediaUrl].url} controls>
                 <source src={mediaList[mediaUrl].url} type="video/webm" />
@@ -14,16 +14,16 @@ function MediaPage({isVideo, mediaList, setLoadingImage, viewMedia, loadingImage
                 onLoad={() => setLoadingImage(false)}
               />
             }
-          </div>
-            <ScrollContainer className="thumbnails_row">
+          </MediaContainer>
+            <ScrollThumbails>
               {mediaList.map((media, index) => (
-                <img className="thumbnail" src={media.thumbnail} alt=""
+                <Thumbnail src={media.thumbnail} alt=""
                   onClick={() =>
                     viewMedia(index)
                   }
                 />
               ))}
-            </ScrollContainer>
+            </ScrollThumbails>
         </div>
     )
 }
