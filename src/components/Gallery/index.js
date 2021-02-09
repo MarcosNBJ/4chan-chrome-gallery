@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./Gallery.css";
 import GridGallery from '../GridGallery'; 
 import MediaPage from '../MediaPage'; 
+import {Container} from './style';
 
 const media = require('4chan-get-media');
 
@@ -28,7 +28,7 @@ function Gallery({ thread_url }) {
   };
 
   return (
-    <div className="container">
+    <Container>
       {mediaUrl !== "" &&
         <MediaPage isVideo={isVideo} mediaList={mediaList} 
                    setLoadingImage={setLoadingImage} 
@@ -38,7 +38,7 @@ function Gallery({ thread_url }) {
       {mediaUrl === "" && 
         <GridGallery clickFunction={viewMedia} mediaList={mediaList} />
       }
-    </div>
+    </Container>
   )
 }
 

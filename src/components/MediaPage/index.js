@@ -1,6 +1,6 @@
 import React from 'react'
-import "./MediaContainer.css";
 import { MediaContainer, ScrollThumbails, Thumbnail } from './style';
+import "./Gallery.css";
 
 function MediaPage({isVideo, mediaList, setLoadingImage, viewMedia, loadingImage, mediaUrl}) {
     return (
