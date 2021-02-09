@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "../styles/Gallery.css";
-import "../styles/MediaContainer.css";
-import GridGallery from '../GridGallery/GridGallery'; 
-import MediaPage from '../MediaPage/MediaPage'; 
+import "./Gallery.css";
+import GridGallery from '../GridGallery'; 
+import MediaPage from '../MediaPage'; 
 
 const media = require('4chan-get-media');
 

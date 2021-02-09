@@ -1,5 +1,6 @@
 import React from 'react'
 import ScrollContainer from "react-indiana-drag-scroll";
+import "./MediaContainer.css";
 
 function MediaPage({isVideo, mediaList, setLoadingImage, viewMedia, loadingImage, mediaUrl}) {
     return (
