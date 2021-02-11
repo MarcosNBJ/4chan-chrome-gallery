@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './styles/App.css';
+import { GlobalStyles } from './theme/globalStyles';
 import Gallery from './components/Gallery'; 
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="App">
 
+        <GlobalStyles />
         <Gallery thread_url={url} />
         <meta name="referrer" content="no-referrer"/>
 
