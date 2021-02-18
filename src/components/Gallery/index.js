@@ -3,6 +3,7 @@ import GridGallery from '../GridGallery';
 import MediaPage from '../MediaPage'; 
 import {Container} from './style';
 
+
 const media = require('4chan-get-media');
 
 function Gallery({ thread_url }) {
