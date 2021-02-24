@@ -19,7 +19,6 @@ export const ScrollThumbails = styled(ScrollContainer)`
     position: fixed;
     bottom: 0;
     left: 0;
-    margin: 10px;
     &::-webkit-scrollbar {
         display: none;
     }
